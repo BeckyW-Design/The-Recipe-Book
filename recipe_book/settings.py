@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-beckywdesig-therecipebo-afu4r7kiznm.ws.codeinstitute-ide.net'
+ALLOWED_HOSTS = ['8000-beckywdesig-therecipebo-afu4r7kiznm.ws.codeinstitute-ide.net',
                 'git.heroku.com/capstone-recipe-book.git']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com']
@@ -47,10 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipes',
-    'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    'recipes',
 ]
 
 MIDDLEWARE = [
