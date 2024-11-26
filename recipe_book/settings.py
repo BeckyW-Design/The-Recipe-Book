@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-beckywdesig-therecipebo-afu4r7kiznm.ws.codeinstitute-ide.net',
-                'git.heroku.com/capstone-recipe-book.git']
+                'capstone-recipe-book-756aa4d92be2.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com']
 
