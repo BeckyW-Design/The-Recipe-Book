@@ -39,8 +39,9 @@ The ultimate hub for food lovers and home cooks! Discover a world of delicious p
 
 ## Database Structure
 
-
+<p align="center">
 <img src="../ReadMe/Images/EDR.png" alt="edr diagram" style="width:500px;"/>
+</p>
 
 ## Competitor Research
 
@@ -74,38 +75,42 @@ The ultimate hub for food lovers and home cooks! Discover a world of delicious p
 | User Story | Feature |
 | ----------| -------- |
 | I am a user I want to be able to see the recipes clearly and be able to identify the ingredients needed | Recipe Cards with Ingredients |  
-| I am a user I want to be have clear space to see and sort recipes| A space for users to store the recipes |
-|I am a user I want to be able to share my own recipes for others to use| Ability to upload users own recipes and upload pictures |
-| I am a user I want to be able to comment on | comment section under the recipe |
-| I am a user I want to be able to rate recipes and see which are the best to try myself | A star rating feature for each recipe |
-| I am a admin and I want to be able to monitor who is making comments on the recipes | login feature with username |
+| I am a user I want to be have clear space to see and sort recipes| A space for users to store a collection of recipes |
+|I am a user I want to be able to share my own recipes for others to use| Ability to upload users own recipes|
+| As a user I want to be able to comment on recipes because I want to give feedback to others on how a recipe turned out. | Comment section under the recipe |
+| As a user I want to be able to rate recipes and see which are the best to try myself | A star rating feature for each recipe |
+|As an admin and I want to be able to monitor who is making comments on the recipes | Login feature with username |
 | As a user I want to connect to my social media to share the recipes I have created| Social Media linked to the website |
+| I am a user and I want to be able to log in so I can comment, rate and store my favourite recipes| Sign up feature |
+| As a user I want to be able to sort recipes by ingredients because I can exclude any that may have allergens or ingredients I dislike.| Filter function for recipes|
+| As a user I wish to upload photos of food I have created because I want feedback from others.| Photo uploading feature|
+| As a user I want to be able to search for recipes of ingredients easily | Search function |
 
 
-MoSCoW score features
+<h3>MoSCoW score features</h3>
 Must Haves
 <ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
+<li>Recipe Cards with Ingredients</li>
+<li>A star rating feature for each recipe</li>
+<li>login feature with username</li>
+<li>Sign up feature</li>
+<lil>Comment section under the recipe</li>
+<li>Upload users own recipes</li>
 </ul> 
 Should Haves
 <ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
+<li>Photo uploading</li>
+<li>Social Media linked to the website</li>
 </ul>
 Could Haves
 <ul>
-<li>The ability to select ingredients and add to a shopping list.</li>
-<li>Sort recipes and exclude those with allergens </li>
+<li>A space for users to store a collection of recipes</li>
 <li>Search function</li>
 </ul>
 Won't Haves 
 <ul>
 <li>The ability to select ingredients and add to a shopping list.</li>
 <li>Sort recipes and exclude those with allergens </li>
-<li>Search function</li>
 </ul>
 
 
