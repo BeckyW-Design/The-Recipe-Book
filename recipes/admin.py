@@ -3,7 +3,8 @@ from .models import RecipeCard
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(RecipeCard)
+# @admin.register(RecipeCard)
+
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'timings', 'status','category','tag')
@@ -12,6 +13,9 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'tag': ('title',)}
     summernote_fields = ('description',)
 
-# Register your models here.
+class RecipeCardAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'servings', 'timings', 'category', 'status']
+    list_filter = ['category', 'status'] 
+    search_fields = ['title', 'description']  
 
-# admin.register(RecipeCard)
+admin.site.register(RecipeCard, RecipeCardAdmin)
