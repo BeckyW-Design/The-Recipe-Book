@@ -1,4 +1,5 @@
 from django.db import models
+from star_ratings.models import Rating
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -38,6 +39,11 @@ class RecipeCard(models.Model):
     def __str__(self):
         return self.title
 
+class Rating(models.Model):
+    recipe = models.ForeignKey(RecipeCard, on_delete=models.CASCADE, related_name="ratings")
+    
+    def average_rating(self):
+        return self.ratings.aggregate(models.Avg('rating'))['rating__avg'] or 0
 
 class Ingredient(models.Model):
     recipe = models.ForeignKey(RecipeCard, on_delete=models.CASCADE, related_name="ingredient")
