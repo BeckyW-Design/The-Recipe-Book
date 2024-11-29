@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import RecipeCard
+from .models import RecipeCard, Ingredient, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# @admin.register(RecipeCard)
+
 
 class PostAdmin(SummernoteModelAdmin):
 
@@ -18,4 +18,16 @@ class RecipeCardAdmin(SummernoteModelAdmin):
     list_filter = ['category', 'status'] 
     search_fields = ['title', 'description']  
 
+class CommentAdmin(SummernoteModelAdmin):
+    list_display = ['author', 'body']
+    list_filter = ['author'] 
+    search_fields = ['author']
+
+class IngredientAdmin(SummernoteModelAdmin):
+    list_display = ['name', 'unit']
+    list_filter = ['name'] 
+    search_fields = ['name']   
+
 admin.site.register(RecipeCard, RecipeCardAdmin)
+admin.site.register(Comment, CommentAdmin)
+admin.site.register(Ingredient, IngredientAdmin)
