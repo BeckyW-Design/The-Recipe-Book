@@ -13,7 +13,7 @@ from .models import RecipeCard, Ingredient, Rating, Comment
 
 class RecipeList(generic.ListView):
     queryset = RecipeCard.objects.filter(status=1)
-    template_name = "recipe_list.html"
+    template_name = "blog/index.html"
     paginate_by = 6
 
 def HomePage(request):
