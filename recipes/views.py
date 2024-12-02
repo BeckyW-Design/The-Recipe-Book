@@ -40,7 +40,7 @@ def recipe_book(request, title):
 
     return render(
         request,
-        "recipes/recipe_book.html",
+        "recipes/recipecard_list.html",
         {
             "recipe": recipe,
             "comments": comments,
