@@ -1,0 +1,45 @@
+[
+    {
+        "model": "recipe.recipeCard",
+        "pk": null,
+        "fields": {
+            "title": "Vegan Lentil Soup",
+            "description": "A delisous hearty soup, perfect for an autum day",
+            "servings":"2 small portions or 1 hungry person",
+            "timinig":"40mins",
+            "category":"Vegan",
+            "creator": 1,
+            "Method":"<ol>
+                        <li>Saute onions, carrots and garlic until soft. </li>
+                        <li>Add lentils, spices to taste and vegtiable stock.</li>
+                        <li>Simmer for 20-25mins intil lentils are soft.</li>
+                        <li>Blend and serve with your favorite vegan bread.</lil>
+                      </ol>",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1,
+            "updated_on": ""
+        }
+    },
+    {
+        "model": "recipe.recipeCard",
+        "pk": null,
+        "fields": {
+            "title": "Vegan Lentil Soup",
+            "description": "A delisous hearty soup, perfect for an autum day",
+            "servings":"2 small portions or 1 hungry person",
+            "timinig":"40mins",
+            "category":"Vegan",
+            "creator": 1,
+            "Method":"<ol>
+                            <li>Saute onions, carrots and garlic until soft. </li>
+                            <li>Add lentils, spices to taste and vegtiable stock.</li>
+                            <li>Simmer for 20-25mins intil lentils are soft.</li>
+                            <li>Blend and serve with your favorite vegan bread.</lil>
+                          </ol>",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1,
+            "updated_on": ""
+            }
+        },
+
+]
