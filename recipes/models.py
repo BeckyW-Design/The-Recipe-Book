@@ -1,21 +1,15 @@
 from django.db import models
 from star_ratings.models import Rating
-
+from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
-class User(models.Model):
-    fname = models.CharField(max_length=20)
-    lname = models.CharField(max_length=30)
-    email = models.EmailField(unique=True, blank=False)
-
-def __str__(self):
-        return f"{self.fname} {self.lname}"
-
-
 class RecipeCard(models.Model):
     title = models.CharField(max_length=150)
+    creator = models.ForeignKey( 
+        User, on_delete=models.CASCADE, related_name="recipe_card"
+    ) 
     description = models.TextField()
     servings = models.IntegerField()
     timings = models.IntegerField() 
@@ -37,7 +31,7 @@ class RecipeCard(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title
+        return f"{self.title}| Uploaded by {self.user}"
 
 class Rating(models.Model):
     recipe = models.ForeignKey(RecipeCard, on_delete=models.CASCADE, related_name="ratings")
@@ -75,6 +69,12 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"{self.body} by {self.author}"    
 
 
 
