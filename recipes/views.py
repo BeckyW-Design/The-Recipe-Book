@@ -1,15 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import RecipeCard, Ingredient, Rating, Comment
 
 
 # Create your views here.
-
-# def recipe_book(request, title):
-#     post = get_object_or_404(RecipeCard, slug=slug)
-#     return render(request, 'recipe/recipe_book.html', {'recipe': post})
 
 class RecipeList(generic.ListView):
     queryset = RecipeCard.objects.filter(status=1)
@@ -19,11 +16,15 @@ class RecipeList(generic.ListView):
 def HomePage(request):
     return render(request, 'home.html')
 
-def recipe_book(request, title):
-    queryset = Post.objects.filter(status=1)
+def recipe_book(request, slug):
+
+    queryset = RecipeCard.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
+
+
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -35,14 +36,14 @@ def recipe_book(request, title):
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
-
-    comment_form = CommentForm()
+    else:
+        comment_form = CommentForm() 
 
     return render(
         request,
-        "recipes/recipecard_list.html",
+        "blog/recipecard_list.html",
         {
-            "recipe": recipe,
+            "post": post,
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form
@@ -52,7 +53,7 @@ def recipe_book(request, title):
 def comment_edit(request, slug, comment_id):
 
     if request.method == "POST":
-        queryset = Post.objects.filter(status=1)
+        queryset = RecipeCard.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
@@ -70,7 +71,7 @@ def comment_edit(request, slug, comment_id):
 
 def comment_delete(request, slug, comment_id):
 
-    queryset = Post.objects.filter(status=1)
+    queryset = RecipeCard.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 

@@ -13,7 +13,7 @@ class RecipeCard(models.Model):
     description = models.TextField()
     servings = models.IntegerField()
     timings = models.IntegerField() 
-    tag = models.SlugField(max_length=100)
+    slug = models.SlugField(max_length=100)
 
     category_choices = [
         ('GF', 'Gluten Free'),

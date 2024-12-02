@@ -131,6 +131,7 @@ Won't Haves
 |Stock Image of recipe book | https://www.pexels.com/photo/white-and-gray-chevron-print-recipes-book-833109/|
 |Logo Design | Designed using Canva |
 | Fonts | Google Fonts |
+|Stock Images for recipes | https://www.pexels.com |
 
 ## Known Bugs
 

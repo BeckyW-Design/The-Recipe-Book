@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% for event in event_list %}
+<a href="{% url 'event_detail' event.event_id %}">
+    <h2>{{ event.event_name }}</h2>
+</a>
+{% endfor %}
+
+{% endblock %}
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
@@ -18,7 +25,7 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'recipe_card' post.slug %}" class="post-link">" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
